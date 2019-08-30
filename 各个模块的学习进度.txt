@@ -1,0 +1,135 @@
+孙宏帆   http://172.19.14.197:40892/
+强翔     http://172.19.14.249:40892/
+
+// 饿了么的学习进度
+index.html                             写完1遍
+static/css/reset.css                   写完1遍
+stylus/index.styl                      写完1遍
+main.js                                写完1遍
+mixin.styl                             写完1遍
+router/index.js                        写完1遍
+common/js/util.js                      写完1遍
+App.vue                                写完1遍       有部分函数我觉得可有可无
+header.vue                             写完1遍
+star.vue                               写完1遍
+cartcontrol.vue                        写完1遍
+date.js                                写完1遍
+food.vue                               写完1遍
+ratingselect.vue                       写完1遍
+goods.vue                              写完1遍
+shopcart.vue                           写完1遍
+js/store.js                            写完1遍
+seller.vue                             写完1遍
+common/js/date.js                      写完1遍
+ratings.vue                            写完1遍
+
+// 音乐项目的学习进度
+common/stylus/variable.styl            		写完1遍
+common/stylus/mixin.styl               		写完1遍
+common/stylus/index.styl               		写完1遍
+common/stylus/reset.styl               		写完1遍
+common/stylus/base.styl                		写完1遍
+common/stylus/icon.styl                		写完1遍
+
+api/config.js                          		写完1遍
+api/song.js                                     写完1遍
+api/recommend.js                   		写完1遍
+api/singer.js                                   写完1遍
+api/rank.js                                     写完1遍
+api/search.js                                   写完1遍
+
+common/js/jsonp.js                     		写完1遍
+common/js/hack.js                      		写完1遍
+common/js/config.js                   		写完1遍
+common/js/util.js                      		写完1遍
+common/js/uid.js                                写完1遍
+common/js/song.js                               写完1遍
+common/js/mixin.js                              写完1遍
+common/js/cache.js                              写完1遍
+common/js/singer.js                             写完1遍
+common/js/dom.js                                写完1遍
+
+base/scroll/scroll.vue                 		写完1遍
+base/loading.loading.vue                        写完1遍
+base/slider/slider.vue             		写完1遍
+base/song-list/song-list.vue                    写完1遍
+base/progress-bar/progress-bar.vue              写完1遍
+base/progress-circle/progress-circle.vue        写完1遍
+base/confirm/confirm.vue                        写完1遍
+base/search-box/search-box.vue                  写完1遍
+base/switches/switches.vue                      写完1遍
+base/top-tip/top-tip.vue                        写完1遍
+base/search-list/search-list.vue                写完1遍
+base/no-result/no-result.vue                    写完1遍
+base/loading/loading.vue                        写完1遍
+base/listview/listview.vue                      写完1遍
+
+components/m-header/m-header.vue       		写完1遍
+components/tab/tab.vue                 		写完1遍
+components/recommend/recommend.vue     		写完1遍
+components/disc/disc.vue                        写完1遍
+components/music-list/music-list.vue            写完1遍
+components/player/player.vue                    写完1遍
+components/playlist/playlist.vue                写完1遍
+components/add-song/add-song.vue                写完1遍
+components/suggest/suggest.vue                  写完1遍
+components/singer/singer.vue                    写完1遍
+components/singer-detail/singer-detail.vue      写完1遍
+components/rank/rank.vue                        写完1遍
+components/top-list/top-list.vue                写完1遍
+components/search/search.vue                    写完1遍
+components/user-center/user-center.vue          写完1遍
+
+store/index.js                                  写完1遍
+store/actions.js                                写完1遍
+store/mutation-types.js                         写完1遍
+store/state.js                                  写完1遍
+store/getters.js                                写完1遍
+
+src/App.vue                                     写完1遍
+src/main.js                                     写完1遍
+index.html                             		写完1遍
+router/index.js                                 写完1遍
+
+
+
+//再谈前后端分离式 手把手从0打造电商平台-用户操作系统的学习
+	视频学习的进度：
+		第11章 后台管理系统介绍（附赠内容）
+			11-1 后台管理系统介绍                                                              学完1遍
+			11-2 后台管理系统功能演示                                                          学完1遍
+			11-3 后台管理系统代码演示                                                          学完1遍
+			12-1 项目上线过程                                                                  学完1遍
+			12-2 线上服务器环境搭建                                                            学完1遍中!!!!!!!!!!!!
+//再谈前后端分离式 手把手从0打造电商平台-后台管理系统的学习
+
+//react的学习
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
