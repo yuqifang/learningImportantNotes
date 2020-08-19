@@ -1,0 +1,25 @@
+起三个服务：npm run dev   npm run serve weex debug
+weex调试工具
+1.手机安装weexplayground    (必须手机和电脑是同一个局域网，才会起作用)
+2.在终端再执行一个命令weex debug，然后用手机安装的weexplayground去扫描二维码--点击inspector--再点击浏览器中的扫描按钮--再点开浏览器中要扫描的二维码--再回到浏览器真机调试页面
+
+搭建weex开发环境
+1.安装依赖node.js
+2.npm install -g weex-toolkit
+3.weex -v
+4.weex init weexProject
+5.npm install
+6.npm run dev
+7.npm run serve (注意：要重新启动一个终端服务)
+8.打开页面后，可以点击谷歌浏览器右上方三个小点 -->更多工具-->开发者工具
+
+weex通用样式
+1.weex对于长度值目前只支持像素值，不支持相对单位(em，rem),适配以750为标准。需要用到屏幕适配系数scale = 当前屏幕尺寸 / 750
+2.设定边框,border目前不支持类似这样border: 1px solid #ff0000的组合写法
+3.设定背景色，background目前不支持类似这样background:red的写法，需要修改为具体的background-color: red
+4.weex支持position定位，relative | absolute | fixed | sticky，默认值为relative
+5.weex目前不支持z-index设置元素层级关系，但靠后的元素层级更高，因此，对于层级高的元素，可将其排列在后面
+6.如果定位元素超过容器边界，在Android下，超出部分不可见，原因Android端元素overflow默认值为hidden
+7.weex中box-shadow仅仅支持IOS
+8.目前<image>组件无法定义一个或几个角的border-radius，只对IOS有效，对Android无效
+9.weex中，flexbox是默认并且唯一的布局模型，每个元素都默认拥有了display: flex属性
