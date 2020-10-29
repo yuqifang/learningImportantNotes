@@ -1,0 +1,65 @@
+@charset "utf-8";
+/* reset css */
+body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin: 0;padding: 0;}
+html{font-size: 10px; width: 100%;}
+body{background:#fff;-webkit-text-size-adjust: 100%; width: 100%;}
+a{text-decoration: none}
+em{font-style: normal}
+ul, ol, li { list-style: none; }
+img{border: 0; display: block;}
+table{border-collapse: collapse; border-spacing:0;}
+
+.clear:after {
+    clear:both;
+    content: '';
+    font-size:0;
+    height:0;
+    line-height:0;
+    overflow:hidden;
+    display: block;
+}
+button {
+    display: block;
+    border: none;
+}
+
+/* iphone 6 */
+/* 
+    @media (min-device-width : 375px) and (max-device-width : 667px) and (-webkit-min-device-pixel-ratio : 2) {
+        html {
+            font-size: 117.1875px;
+        }
+    } 
+*/
+
+/* iphone6 plus */
+/*
+    @media (min-device-width : 414px) and (max-device-width : 736px) and (-webkit-min-device-pixel-ratio : 3) {
+        html {
+            font-size: 108.1875px;
+        }
+    }
+    @media (max-device-width:320px ) {
+        html,body{
+            font-size:85px;
+        }
+    }
+*/
+
+[v-cloak]{
+    display: none;
+}
+
+.yingcolor{
+	color: #FE6859 !important;
+}
+
+.kuicolor{
+	color: #3E7ED9 !important;
+}
+
+@font-face {
+    /* font-properties */
+    font-family: DIN-Medium;
+    src: url('../assets/DIN-Medium.otf');
+}

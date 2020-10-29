@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no telephone=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="format-detection" content="telephone=no">
+        <title>期权交易投资账单</title>
+        <link rel="stylesheet" type="text/css" href="css/common.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <script src="../../libs/vue.min.js"></script>
+        <script src="../../tlibs/ts_client.js"></script>
+        <script src="../../tlibs/connect.js"></script>
+        <!--
+        <script src="../../tlibs/base64.js"></script>
+        <script src="../homepage/config.js"></script>
+        <script src="../homepage/js/global.js"></script>
+        
+        <script src="js/fxts.js" type="text/javascript" charset="utf-8"></script> -->
+        <script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/vConsole/3.3.4/vconsole.min.js"></script>
+        <script>
+            var vConsole = new VConsole();
+            console.log('Hello world A 20200720');
+        </script>
+    </head>
+    <body>
+        <div class="investmentBill" id="investmentBill">
+            <div class="accountAnalysis">
+                <div class="onlyAnalysis">
+                    <div class="acount">账户分析</div>
+                    <div class="time">2020-2-24</div>
+                </div>
+                <div class="allMoney">
+                    <div class="allMoneyText">总资产</div>
+                    <div class="allMoneyNum yingcolor">
+                        <span class="moneyIcon">¥</span>
+                        <span class="realyNum">31,923.31</span>
+                    </div>
+                    <div class="whiteLine"></div>
+                </div>
+                <div class="assetsAndValue">
+                    <div class="moneyAssets">
+                        <div class="agreementText">资金资产</div>
+                        <span class="yingcolor">5371.12</span>
+                    </div>
+                    <div class="verticalLine"></div>
+                    <div class="agreementValue">
+                        <div class="agreementText">合约市值</div>
+                        <span class="kuicolor">-4231.12</span>
+                    </div>
+                </div>
+            </div>
+            <div class="yesterdayWrapper">
+                <div class="profitLossText">昨日盈亏</div>
+                <div class="profitLossNum yingcolor">¥<span>1231.00</span></div>
+                <div class="profitLossRatio">收益率<span>0.15%</span></div>
+                <ul class="yesterdayUl">
+                    <li class="yesterdayLi">
+                        <p class="pDesc">本月盈亏</p>
+                        <p class="pValue yingcolor">13347.23</p>
+                        <p class="pRatio yingcolor">12.12%</p>
+                    </li>
+                    <li class="yesterdayLi">
+                        <p class="pDesc">近3月盈亏</p>
+                        <p class="pValue yingcolor">13347.23</p>
+                        <p class="pRatio yingcolor">12.12%</p>
+                    </li>
+                    <li class="yesterdayLi">
+                        <p class="pDesc">近6月盈亏</p>
+                        <p class="pValue kuicolor">13347.23</p>
+                        <p class="pRatio kuicolor">12.12%</p>
+                    </li>
+                    <li class="yesterdayLi">
+                        <p class="pDesc">本年盈亏</p>
+                        <p class="pValue yingcolor">13347.23</p>
+                        <p class="pRatio yingcolor">12.12%</p>
+                    </li>
+                    <li class="yesterdayLi">
+                        <p class="pDesc">开户以来总盈亏</p>
+                        <p class="pValue yingcolor">13347.23</p>
+                        <p class="pRatio yingcolor">12.12%</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="wantToSee">
+                <div class="seeTitleImg">
+                    <p>想看？就点我</p>
+                    <img src="img/wantImg.png" alt="" />
+                </div>
+                <div class="monthAndInvestment">
+                    <div class="monthlyBill" @click="goMonth">
+                        <p>月度账单</p>
+                        <img src="img/monthlyBill.png" alt="" />
+                    </div>
+                    <div class="centerMargin"></div>
+                    <div class="investmentAnalysis" @click="goAnalysis">
+                        <p>投资分析</p>
+                        <img src="img/investmentAnalysis.png" alt="" />
+                    </div>
+                </div>
+            </div>
+            <div class="investmentOptimize">
+                <div class="optimizeHeader">
+                    <h3>投资优化</h3>
+                    <p>公司“弈点”衍生品投顾产品以专业的视角，与您共成长。</p>
+                </div>
+                <ul class="optimizeUl">
+                    <li class="optimizeLi optimizeHeaderLi">
+                        <div class="haveSubscribeProduct">已订阅产品</div>
+                        <div class="maturityDate">到期日</div>
+                        <div class="detail">详情</div>
+                    </li>
+                    <li class="optimizeLi optimizeBodyLi">
+                        <div class="haveSubscribeProduct">大行其道1号</div>
+                        <div class="maturityDate">2020-02-28</div>
+                        <div class="detail">
+                            <span class="viewTextDetail">观点详情</span>
+                            <img src="img/redArrow.png" alt="" />
+                        </div>
+                    </li>
+                    <li class="optimizeLi optimizeBodyLi">
+                        <div class="haveSubscribeProduct">大行其道2号（300ETF）</div>
+                        <div class="maturityDate">
+                            <p>2020-01-30</p>
+                            <div class="haveOverDue">已过期</div>
+                        </div>
+                        <div class="detail">
+                            <div class="againSubscribe">再次订阅</div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="moreProduct">
+                    <span>更多产品</span>
+                    <img src="img/grayArrow.png" alt="" />
+                </div>
+                <div class="noSubscribe">
+                    <img class="noContentImg" src="img/noContentImg.png" alt="" />
+                    <div class="noHaveRecord">暂无订阅记录！</div>
+                    <button class="immediatelySubscribe">立即订阅</button>
+                </div>
+            </div>
+            <div class="footerWrapper">
+                <div class="instructions">数据仅供参考，实际收益以账户为准</div>
+            </div>
+        </div>
+    </body>
+</html>

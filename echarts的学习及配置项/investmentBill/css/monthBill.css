@@ -1,0 +1,378 @@
+html, body {
+    height: 100%;
+}
+.monthBill {
+    font-family: PingFangSC-Regular;
+    height: 100%;
+}
+.innerMonthBill {
+    height: 100%;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+}
+.scrollMonthBill {
+    flex: 1;
+    -webkit-flex: 1;
+    overflow-y: auto;
+}
+.navTitle {
+    display: flex;
+    display: -webkit-flex;
+    padding-top: 1.3rem;
+}
+.navItem {
+    flex: 1;
+    -webkit-flex: 1;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+}
+.navItem .titleText {
+    font-size: 1.5rem;
+    color: #999;
+    line-height: 1;
+    padding-bottom: 0.8rem;
+}
+.navActive .titleText {
+    color: #333;
+}
+.navItem .shortLine {
+    background: #fff;
+    height: 0.2rem;
+    width: 2.2rem;
+    border-radius: 0.1rem;
+}
+.navActive .shortLine {
+    background: #FE6859;
+}
+.calendarTitle {
+    background: #F0F0F0;
+    height: 3.6rem;
+    padding: 0 1.5rem;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+}
+.yearMonthDay {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+}
+.yearMonthDay .icon img {
+    width: 1.6rem;
+    height: 1.5rem;
+    margin-right: 1rem;
+}
+.yearMonthDay .yearAndMonth {
+    font-size: 1.2rem;
+    color: #666;
+}
+.calendarTitle .arrow img {
+    width: 1.2rem;
+    height: 0.6rem;
+}
+
+.monthBillItem {
+    padding: 2rem 1.5rem 2rem 1.5rem;
+}
+.lastMonthBillItem {
+    padding-bottom: 0;
+}
+.allSeeHeader {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+}
+.allSeeHeader .allSeeTitle {
+    font-size: 2rem;
+    color: #333;
+    margin-right: 1rem;
+}
+.allSeeHeader .allSeeTime {
+    color: #999;
+    font-size: 1.2rem;
+}
+.allMoneyText {
+    padding-top: 2rem;
+    font-size: 1.4rem;
+    color: #999;
+    letter-spacing: 0;
+    text-align: center;
+}
+.allMoneyNum {
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.allMoneyNum .moneyIcon{
+    font-size: 1.8rem;
+    letter-spacing: 0;
+}
+.allMoneyNum .realyNum{
+    font-family: DIN-Medium;
+    font-size: 3.4rem;
+}
+
+
+.assetsAndValue {
+    display: flex;
+    display: -webkit-flex;
+    padding-top: 1.5rem;
+    padding-bottom: 2.5rem;
+    align-items: center;
+    border-top: 1px solid #f0f0f0;
+}
+.moneyAssets, .agreementValue {
+    flex: 1;
+    -webkit-flex: 1;
+    text-align: center;
+}
+.assetsAndValue .verticalLine {
+    width: 1px;
+    height: 3.6rem;
+    background-color: #f0f0f0;
+}
+.assetsAndValue .agreementText {
+    font-size: 1.2rem;
+    color: #999;
+    padding-bottom: 0.7rem;
+}
+.moneyAssets span, .agreementValue span{
+    font-family: DIN-Medium;
+    font-size: 1.6rem;
+}
+.centerDescAssets {
+    height: 4rem;
+    background-color: #FEEFEE;
+    border-radius: 0.3rem;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    padding: 0 1.5rem;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+}
+.centerDescAssets .time {
+    font-size: 1.2rem;
+    color: #333;
+}
+.centerDescAssets .assetsCenter {
+    font-size: 1.2rem;
+    color: #333;
+}
+.centerDescAssets .assetsRight {
+    font-size: 1.2rem;
+    color: #333;
+}
+.centerDescAssets .specificNum {
+    color: #FE6859;
+}
+.earningsPerformance {
+    margin-top: 1.4rem;
+}
+
+.assetsClassification {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+}
+.choiceAssetsItem {
+    flex: 1;
+    -webkit-flex: 1;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+}
+.choiceAssetsItem img {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+.choiceAssetsItem span {
+    margin-left: 1rem;
+    color: #999;
+    font-size: 1.2rem;
+}
+.activeAssetsItem span {
+    color: #FE6859;
+}
+.grayMargin {
+    height: 1rem;
+    background: #F0F0F0;
+}
+
+.monthBillItem .profitLossRatio {
+    font-size: 1.6rem;
+    color: #333;
+    text-align: center;
+    padding-top: 0.7rem;
+}
+.monthBillItem .profitLossRatio span{
+    font-family: DIN-Medium;
+}
+
+
+.fiveChoice {
+    display: flex;
+    display: -webkit-flex;
+}
+.fiveOneChoice {
+    flex: 1;
+    -webkit-flex: 1;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    font-size: 1.2rem;
+    color: #999;
+}
+.fiveActiveChoice {
+    color: #FE6859;
+}
+.fivefirstChoice {
+    border-right: 1px solid #F0F0F0;
+}
+.fiveOneChoice img {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.twoColumn {
+    display: flex;
+    display: -webkit-flex;
+}
+.oneOfColumn {
+    flex: 1;
+    -webkit-flex: 1;
+    margin-top: 2rem;
+}
+.addPaddingRight {
+    padding-right: 1.5rem;
+    border-right: 1px solid #F0F0F0;
+}
+.addPaddingColumn {
+    padding-left: 1.5rem;
+}
+.columnTitle {
+    height: 1.6rem;
+    line-height: 1;
+    padding-left: 0.5rem;
+    border-left: 0.3rem solid #FE6859;
+    font-size: 1.6rem;
+    color: #333;
+}
+.columnContent {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    margin-top: 1.2rem;
+}
+.columnContent .descTextColumn {
+    font-size: 1.2rem;
+    color: #666;
+}
+.columnContent .descValueColumn {
+    font-family: DIN-Medium;
+    font-size: 1.4rem;
+    color: #333;
+}
+
+.horizonLine {
+    margin: 1.5rem 0;
+    height: 1px;
+    background: #F0F0F0;
+}
+.oneOfColumn .agreementItem {
+    margin-bottom: 1.5rem;
+}
+.oneOfColumn .agreementItem:last-child {
+    margin-bottom: 0;
+}
+
+.agreementItem .agreementDesc {
+    font-size: 1.2rem;
+    color: #666;
+    padding-bottom: 0.8rem;
+}
+.agreementItem .agreementText {
+    font-size: 1.4rem;
+    color: #333;
+    line-height: 1;
+}
+
+
+.monthBillItem .moreProduct {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items:center;
+    -moz-align-items:center;
+    -ms-align-items:center;
+    -o-align-items:center;
+    align-items:center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    height: 4rem;
+    line-height: 4rem;
+    margin-top: 1.5rem;
+    border-top: 1px solid #F0F0F0;
+}
+.monthBillItem .moreProduct span {
+    font-size: 1.4rem;
+    color: #999;
+    margin-right: 0.4rem;
+}
+.monthBillItem .moreProduct img {
+    width: 0.4rem;
+    height: 0.8rem;
+}
+.footerWrapper .instructions {
+    height: 5rem;
+    line-height: 5rem;
+    font-size: 1.2rem;
+    color: #999;
+    text-align: center;
+    background: #f0f0f0;
+}
+
+.allSeeEcharts {
+    height: 20rem;
+}
+.performanceEcharts {
+    height: 20rem;
+}
+.scrollMonthBill .van-picker__cancel {
+    font-size: 1.4rem;
+    color: #333;
+}
+.scrollMonthBill .van-picker__confirm {
+    font-size: 1.4rem;
+    color: #FE6859;
+}

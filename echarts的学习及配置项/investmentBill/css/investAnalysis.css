@@ -1,0 +1,321 @@
+@font-face {
+    font-family: DIN-Medium;
+    src: url('../assets/DIN-Medium.otf');
+}
+html, body {
+    height: 100%;
+}
+.investAnalysis {
+    font-family: PingFangSC-Regular;
+    height: 100%;
+}
+.innerAnalysis {
+    height: 100%;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+}
+.canScroll {
+    flex: 1;
+    -webkit-flex: 1;
+    overflow-y: auto;
+}
+.navTitle {
+    display: flex;
+    display: -webkit-flex;
+    padding-top: 1.3rem;
+}
+.navItem {
+    flex: 1;
+    -webkit-flex: 1;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+}
+.navItem .titleText {
+    font-size: 1.5rem;
+    color: #999;
+    line-height: 1;
+    padding-bottom: 0.8rem;
+}
+.navActive .titleText {
+    color: #333;
+}
+.navItem .shortLine {
+    background: #fff;
+    height: 0.2rem;
+    width: 2.2rem;
+    border-radius: 0.1rem;
+}
+.navActive .shortLine {
+    background: #FE6859;
+}
+
+.analysisCycle {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+    height: 3.6rem;
+    background: #F0F0F0;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.monthBillItem {
+    border-bottom: 1px solid #F0F0F0;
+}
+.allSeeHeader {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    padding-top: 2.5rem;
+}
+.allSeeHeader .allSeeTitle {
+    font-size: 2rem;
+    color: #333;
+    line-height: 1;
+    margin-left: 1.5rem;
+    margin-right: 1rem;
+}
+
+.everyEchartsItem {
+    height: 20rem;
+    border-bottom: 1px solid #F0F0F0;
+}
+
+.grayFiedHeight {
+    height: 1rem;
+    background-color: #F0F0F0;
+}
+.tradingNumberText {
+    text-align: center;
+    font-size: 1.4rem;
+    color: #999;
+    padding-top: 2rem;
+}
+.tradingOnlyNumber {
+    text-align: center;
+    font-size: 3.4rem;
+    color: #FE6859;
+    padding-top: 1rem;
+}
+.allTypeNum {
+    padding: 1.5rem;
+    border-bottom: 1px solid #F0F0F0;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+}
+.directionTypeNum {
+    flex: 1;
+    -webkit-flex: 1;
+}
+.typeItemNum {
+    display: flex;
+    -webkit-display: flex;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    margin-bottom: 1.2rem;
+}
+.directionTypeNum .typeItemNum:last-child {
+    margin-bottom: 0;
+}
+.typeItemNum .textDescType {
+    font-family: PingFangSC-Regular;
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1;
+}
+.typeItemNum .textValueType {
+    font-family: DIN-Medium;
+    font-size: 1.4rem;
+    color: #333;
+    letter-spacing: 0;
+    line-height: 1;
+}
+.verticalLine {
+    width: 1px;
+    height: 6.6rem;
+    background: #F0F0F0;
+    margin: 0 1.5rem;
+}
+
+.friendlyRiskMessage {
+    background: #FFF6EB;
+    padding-left: 1.5rem;
+    height: 3.6rem;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+}
+.friendlyRiskMessage img {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-right: 0.5rem;
+}
+.friendlyRiskMessage p {
+    font-size: 1.2rem;
+    color: #FFAC37;
+}
+
+.footerWrapper .instructions {
+    height: 5rem;
+    line-height: 5rem;
+    font-size: 1.2rem;
+    color: #999;
+    text-align: center;
+    background: #f0f0f0;
+}
+
+.accountRiskEcharts {
+    text-align: center;
+    padding-top: 1.6rem;
+    margin-bottom: 2rem;
+}
+.accountRiskEcharts img {
+    margin-left: auto;
+    margin-right: auto;
+}
+.accountRiskEcharts .percentRadio {
+    font-size: 3rem;
+    color: #3E7ED9;
+    line-height: 1;
+    margin-top: -4.58rem;
+}
+.accountRiskEcharts .percentRadio span{
+    font-size: 1.6rem;
+}
+.accountRiskEcharts .yesterdayRisk {
+    font-size: 1.5rem;
+    color: #999;
+}
+
+.riskNumWrapper {
+    padding-bottom: 2rem;
+}
+.riskEveryItem {
+    display: flex;
+    display: -webkit-flex;
+    height: 2.4rem;
+    line-height: 2.4rem;
+}
+.riskEveryItem .riskDescText {
+    font-family: PingFangSC-Regular;
+    font-size: 1.4rem;
+    color: #333;
+    margin-left: 1.5rem;
+    flex: 1;
+    -webkit-flex: 1;
+}
+.riskEveryItem .riskDescValue {
+    font-family: PingFangSC-Regular;
+    font-size: 1.4rem;
+    color: #333;
+    margin-left: 1.5rem;
+    flex: 1;
+    -webkit-flex: 1;
+}
+.fontBold {
+    font-weight: bold;
+}
+.riskEveryItem .dinFontFamily {
+    font-family: DIN-Medium;
+}
+
+/* 账户风险弹窗 */
+.riskWindow {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+.riskShadow {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+.riskWrapperContent {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+}
+.riskWrapperContent .riskContent {
+    width: 80%;
+    border-radius: 1rem;
+    background: #fff;
+    padding: 3rem 2rem 2.5rem 2rem;
+}
+.riskHeaderTitle {
+    font-weight: bold;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+.riskInnerContent {
+    font-size: 1.4rem;
+    color: #333;
+    line-height: 2rem;
+    margin-bottom: 2rem;
+}
+.riskButton {
+    font-weight: bold;
+    height: 4.4rem;
+    line-height: 4.4rem;
+    text-align: center;
+    font-size: 1.6rem;
+    color: #fff;
+    background: #FE6859;
+    box-shadow: 0 3px 5px 0 rgba(254,104,89,0.40);
+    border-radius: 2.2rem;
+}
+
+.noSubscribe .noContentImg {
+    display: block;
+    width: 19rem;
+    height: 13rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.noSubscribe .noHaveRecord {
+    font-size: 1.4rem;
+    color: #999;
+    text-align: center;
+    margin-bottom: 7rem;
+}
+
+.everyRiskColor0, .everyRiskColor1, .everyRiskColor2, .everyRiskColor3 {
+    color: #3E7ED9 !important;
+}
+.everyRiskColor4, .everyRiskColor5, .everyRiskColor6 {
+    color: #FFAC37 !important;
+}
+.everyRiskColor7, .everyRiskColor8, .everyRiskColor9 {
+    color: #FE6859 !important;
+}
+.everyRiskColor10 {
+    color: #F50000 !important;
+}

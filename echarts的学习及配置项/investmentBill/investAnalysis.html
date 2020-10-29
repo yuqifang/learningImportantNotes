@@ -1,0 +1,174 @@
+<!DOCTYPE html>  
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no telephone=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="format-detection" content="telephone=no">
+        <title>期权交易投资账单--投资分析</title>
+        <link rel="stylesheet" type="text/css" href="css/common.css">
+        <link rel="stylesheet" type="text/css" href="css/investAnalysis.css">
+        <script src="../homepage/js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../libs/vue.min.js"></script>
+        <script src="../../tlibs/ts_client.js"></script>
+        <script src="../../tlibs/connect.js"></script>
+        <!--
+        
+
+        
+        <script src="../../tlibs/base64.js"></script>
+        <script src="../homepage/config.js"></script>
+        <script src="../homepage/js/global.js"></script>
+        
+        <script src="js/fxts.js" type="text/javascript" charset="utf-8"></script> -->
+        <script src="js/investAnalysis.js" type="text/javascript" charset="utf-8"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/vConsole/3.3.4/vconsole.min.js"></script>
+        <script>
+            var vConsole = new VConsole();
+            console.log('Hello world A 20200720');
+        </script>
+    </head>
+    <body>
+        <div class="investAnalysis" id="investAnalysis" v-cloak>
+            <div class="innerAnalysis">
+                <div class="fixedHeader">
+                    <div class="navTitle">
+                        <div class="navItem" @click="goMonth">
+                            <p class="titleText">月度账单</p>
+                            <div class="shortLine"></div>
+                        </div>
+                        <div class="navItem" :class="'navActive'" @click="goAnalysis">
+                            <p class="titleText">投资分析</p>
+                            <div class="shortLine"></div>
+                        </div>
+                    </div>
+                    <div class="analysisCycle">
+                        <div class="analysisCycleText">
+                            分期周期：2020-04-01至2020-04-16
+                        </div>
+                    </div>
+                </div>
+                <div class="canScroll">
+                    <div class="monthBillItem">
+                        <div class="allSeeHeader">
+                            <div class="allSeeTitle">持仓偏好</div> 
+                        </div>
+                        <div class="everyEchartsItem" id="buySellingEcharts"></div>
+                        <div class="everyEchartsItem" id="purchasePreferenceEcharts"></div>
+                        <div class="everyEchartsItem" id="timeLimitEcharts"></div>
+                        <div class="everyEchartsItem" id="underlyingEcharts"></div>
+                        <div class="noSubscribe"> 
+                            <img class="noContentImg" src="img/noContentImg.png" alt="" />
+                            <div class="noHaveRecord">暂无持仓记录！</div>
+                        </div>
+                    </div>
+                    <div class="grayFiedHeight"></div>
+                    <div class="monthBillItem">
+                        <div class="allSeeHeader">
+                            <div class="allSeeTitle">交易偏好</div>
+                        </div>
+                        <div class="tradingNumberText">交易量(张)</div>
+                        <div class="tradingOnlyNumber">50</div>
+                        <div class="allTypeNum">
+                            <div class="directionTypeNum">
+                                <div class="typeItemNum">
+                                    <div class="textDescType">开仓量(张)</div>
+                                    <div class="textValueType">30</div>
+                                </div>
+                                <div class="typeItemNum">
+                                    <div class="textDescType">买入开仓</div>
+                                    <div class="textValueType">20</div>
+                                </div>
+                                <div class="typeItemNum">
+                                    <div class="textDescType">卖出开仓</div>
+                                    <div class="textValueType">10</div>
+                                </div>
+                            </div>
+                            <div class="verticalLine"></div>
+                            <div class="directionTypeNum">
+                                <div class="typeItemNum">
+                                    <div class="textDescType">平仓量(张)</div>
+                                    <div class="textValueType">20</div>
+                                </div>
+                                <div class="typeItemNum">
+                                    <div class="textDescType">卖出平仓</div>
+                                    <div class="textValueType">15</div>
+                                </div>
+                                <div class="typeItemNum">
+                                    <div class="textDescType">买入平仓</div>
+                                    <div class="textValueType">10</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="everyEchartsItem" id="tradingEcharts" style="height: 200px;"></div>
+                        <div class="noSubscribe"> 
+                            <img class="noContentImg" src="img/noContentImg.png" alt="" />
+                            <div class="noHaveRecord">暂无交易记录！</div>
+                        </div>
+                    </div>
+                    <div class="grayFiedHeight"></div>
+                    <div class="monthBillItem">
+                        <div class="allSeeHeader">
+                            <div class="allSeeTitle">账户风险</div>
+                            <img src="./img/exclamationMark.png" width="14px" @click="goShowRiskMessage" />
+                        </div>
+                        <div class="accountRiskEcharts"> 
+                            <img :src="'./img/dashboard' + calculateRiskLevel() + '.png'" width="180px" />
+                            <div class="percentRadio" :class="'everyRiskColor' + calculateRiskLevel()">{{ riskValue }}<span>%</span></div>
+                            <div class="yesterdayRisk">上日风险度</div>
+                        </div>
+                        <div class="riskNumWrapper">
+                            <div class="riskEveryItem">
+                                <div class="riskDescText">您的股票期权交易权限</div>
+                                <div class="riskDescValue fontBold">上海&nbsp;&nbsp;三级交易权限</div>
+                            </div>
+                            <div class="riskEveryItem">
+                                <div class="riskDescText"></div>
+                                <div class="riskDescValue fontBold">深证&nbsp;&nbsp;三级交易权限</div>
+                            </div>
+                            <div class="riskEveryItem">
+                                <div class="riskDescText">您的风险承受能力评测结果</div>
+                                <div class="riskDescValue fontBold">中高风险</div>
+                            </div>
+                            <div class="riskEveryItem">
+                                <div class="riskDescText">最大风险度</div>
+                                <div class="riskDescValue dinFontFamily">110.00%</div>
+                            </div>
+                            <div class="riskEveryItem">
+                                <div class="riskDescText">追保风险次数</div>
+                                <div class="riskDescValue dinFontFamily">10</div>
+                            </div>
+                            <div class="riskEveryItem">
+                                <div class="riskDescText">强平风险风险次数</div>
+                                <div class="riskDescValue dinFontFamily">0</div>
+                            </div>
+                            <div class="riskEveryItem">
+                                <div class="riskDescText">即时平仓风险风险次数</div>
+                                <div class="riskDescValue dinFontFamily">0</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="friendlyRiskMessage" v-if="riskValue >= 80">
+                        <img src="./img/riskIcon.png" />
+                        <p>您的账户风险偏高，请注意操作风险及保证金风险。</p>
+                    </div>
+                    <div class="footerWrapper">
+                        <div class="instructions">数据仅供参考，实际收益以账户为准</div> 
+                    </div>
+        
+                    <div class="riskWindow" v-if="showRiskWindow">
+                        <div class="riskShadow"></div>
+                        <div class="riskWrapperContent">
+                            <div class="riskContent">
+                                <div class="riskHeaderTitle">账户风险</div>
+                                <div class="riskInnerContent">风险度为衡量期权客户风险情况的指标，风险度=客户占用保证金/总权益*100%。</div>
+                                <div class="riskInnerContent">追保风险为保证金实时风险度超过90%；强平风险风险为保证金实时风险度超过100%；即时平仓风险为交易所保证金实时风险度超过100%。</div>
+                                <div class="riskButton" @click="closeRiskMessage">确定</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

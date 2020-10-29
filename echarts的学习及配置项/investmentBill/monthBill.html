@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no telephone=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="format-detection" content="telephone=no">
+        <title>期权交易投资账单--月度账单</title>
+        <link rel="stylesheet" type="text/css" href="css/common.css">
+        <link rel="stylesheet" type="text/css" href="css/monthBill.css">
+        <link rel="stylesheet" type="text/css" href="../../libs/vant.min.css">
+        <script src="../homepage/js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../libs/vue.min.js"></script>
+        <script src="../../libs/vant.min.js" type="text/javascript"></script>
+        <script src="../../tlibs/ts_client.js"></script>
+        <script src="../../tlibs/connect.js"></script>
+        <!--
+        
+
+        
+        <script src="../../tlibs/base64.js"></script>
+        <script src="../homepage/config.js"></script>
+        <script src="../homepage/js/global.js"></script>
+        
+        <script src="js/fxts.js" type="text/javascript" charset="utf-8"></script> -->
+        <script src="js/monthBill.js" type="text/javascript" charset="utf-8"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/vConsole/3.3.4/vconsole.min.js"></script>
+        <script>
+            var vConsole = new VConsole();
+        </script>
+    </head>
+    <body>
+        <div class="monthBill" id="monthBill">
+            <div class="innerMonthBill">
+                <div class="monthBillHeader">
+                    <div class="navTitle">
+                        <div class="navItem" :class="'navActive'" @click="goMonth">
+                            <p class="titleText">月度账单</p>
+                            <div class="shortLine"></div>
+                        </div>
+                        <div class="navItem" @click="goAnalysis">
+                            <p class="titleText">投资分析</p>
+                            <div class="shortLine"></div>
+                        </div>
+                    </div>
+                    <div class="calendarTitle" @click="showYearMonth">
+                        <div class="yearMonthDay">
+                            <div class="icon">
+                                <img src="img/calendar.png" alt="" />
+                            </div>
+                            <p class="yearAndMonth">2020年1月</p>
+                        </div>
+                        <div class="arrow">
+                            <img src="img/arrowDown.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="scrollMonthBill">
+                    <div class="monthBillItem">
+                        <div class="allSeeHeader">
+                            <div class="allSeeTitle">投资总览</div>
+                            <div class="allSeeTime">2020-1-31</div>
+                        </div>
+                        
+                        <div class="allMoneyText">总资产</div>
+                        <div class="allMoneyNum yingcolor">
+                            <span class="moneyIcon">¥</span>
+                            <span class="realyNum">31,923.31</span>
+                        </div>
+                        <div class="assetsAndValue">
+                            <div class="moneyAssets">
+                                <div class="agreementText">资金资产</div>
+                                <span class="yingcolor">5371.12</span>
+                            </div>
+                            <div class="verticalLine"></div>
+                            <div class="agreementValue">
+                                <div class="agreementText">合约市值</div>
+                                <span class="kuicolor">-4231.12</span>
+                            </div>
+                        </div>
+                        <div class="centerDescAssets">
+                            <div class="time">2020-03-20</div>
+                            <div class="assetsRight">
+                                总资产：<span class="specificNum">31923.31</span>
+                            </div>
+                        </div>
+                        <div class="allSeeEcharts" id="allSeeEcharts"></div>
+                        <div class="assetsClassification">
+                            <div class="choiceAssetsItem" :class="'activeAssetsItem'">
+                                <img src="img/choiceCircle.png" alt="" />
+                                <span>总资产</span>
+                            </div>
+                            <div class="choiceAssetsItem">
+                                <img src="img/choiceNoCircle.png" alt="" />
+                                <span>现金资产</span>
+                            </div>
+                            <div class="choiceAssetsItem">
+                                <img src="img/choiceNoCircle.png" alt="" />
+                                <span>合约资产</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grayMargin"></div>
+                    <div class="monthBillItem">
+                        <div class="allSeeHeader">
+                            <div class="allSeeTitle">收益表现</div>
+                        </div>
+                        <div class="allMoneyText">本月盈亏(1月)</div>
+                        <div class="allMoneyNum yingcolor">
+                            <span class="moneyIcon">¥</span>
+                            <span class="realyNum">1,231.00</span>
+                        </div>
+                        <div class="profitLossRatio">收益率<span>0.15%</span></div>
+                        <div class="centerDescAssets earningsPerformance">
+                            <div class="time">2020-03-20</div>
+                            <div class="assetsCenter">
+                                上证指数：<span class="specificNum">1.24%</span>
+                            </div>
+                            <div class="assetsRight">
+                                我的收益：<span class="specificNum">-2.31%</span>
+                            </div>
+                        </div>
+                        <div class="performanceEcharts" id="performanceEcharts"></div>
+                        <div class="fiveChoice">
+                            <div class="fiveOneChoice fivefirstChoice">
+                                <img src="img/choiceNoCircle.png" alt="" />
+                                <span>我的收益</span>
+                            </div>
+                            <div class="fiveOneChoice fiveActiveChoice">
+                                <img src="img/choiceCircle.png" alt="" />
+                                <span>上证指数</span>
+                            </div>
+                            <div class="fiveOneChoice">
+                                <img src="img/choiceNoCircle.png" alt="" />
+                                <span>深证成指</span>
+                            </div>
+                            <div class="fiveOneChoice">
+                                <img src="img/choiceNoCircle.png" alt="" />
+                                <span>创业板指</span>
+                            </div>
+                            <div class="fiveOneChoice">
+                                <img src="img/choiceNoCircle.png" alt="" />
+                                <span>沪深300</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grayMargin"></div>
+                    <div class="monthBillItem">
+                        <div class="allSeeHeader">
+                            <div class="allSeeTitle">操作统计</div>
+                        </div>
+                        <div class="twoColumn">
+                            <div class="oneOfColumn addPaddingRight">
+                                <div class="columnTitle">交易</div>
+                                <div class="columnContent">
+                                    <div class="descTextColumn">合约数</div>
+                                    <div class="descValueColumn">5</div>
+                                </div>
+                                <div class="columnContent">
+                                    <div class="descTextColumn">盈利合约</div>
+                                    <div class="descValueColumn">3</div>
+                                </div>
+                                <div class="columnContent">
+                                    <div class="descTextColumn">盈利合约占比</div>
+                                    <div class="descValueColumn">60.0%</div>
+                                </div>
+                            </div>
+                            <div class="oneOfColumn addPaddingColumn">
+                                <div class="columnTitle">行权</div>
+                                <div class="columnContent">
+                                    <div class="descTextColumn">合约数</div>
+                                    <div class="descValueColumn">50</div>
+                                </div>
+                                <div class="columnContent">
+                                    <div class="descTextColumn">行权数</div>
+                                    <div class="descValueColumn">50</div>
+                                </div>
+                                <div class="columnContent">
+                                    <div class="descTextColumn">行权额</div>
+                                    <div class="descValueColumn">50.00</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="horizonLine"></div>
+                        <div class="columnTitle">合约之最</div>
+                        <div class="twoColumn">
+                            <div class="oneOfColumn">
+                                <div class="agreementItem">
+                                    <div class="agreementDesc">交易量最大合约</div>
+                                    <span class="agreementText">沪-50ETF沽2月2700</span>
+                                </div>
+                                <div class="agreementItem">
+                                    <div class="agreementDesc">盈利额最大合约</div>
+                                    <span class="agreementText">沪-50ETF沽2月2700</span>
+                                </div>
+                                <div class="agreementItem">
+                                    <div class="agreementDesc">交易量最大的合约标的</div>
+                                    <span class="agreementText">沪-50ETF沽2月2700</span>
+                                </div>
+                                <div class="agreementItem">
+                                    <div class="agreementDesc">盈利额最大的合约标的</div>
+                                    <span class="agreementText">沪-50ETF沽2月2700</span>
+                                </div>
+                            </div>
+                            <div class="oneOfColumn">
+                                <div class="agreementItem">
+                                    <div class="agreementDesc">交易额最大合约</div>
+                                    <span class="agreementText">沪-50ETF沽2月2700</span>
+                                </div>
+                                <div class="agreementItem">
+                                    <div class="agreementDesc">亏损额最大合约</div>
+                                    <span class="agreementText">沪-50ETF沽2月2700</span>
+                                </div>
+                                <div class="agreementItem">
+                                    <div class="agreementDesc">交易额最大的合约标的</div>
+                                    <span class="agreementText">沪-50ETF沽2月2700</span>
+                                </div>
+                                <div class="agreementItem">
+                                    <div class="agreementDesc">亏损额最大的合约标的</div>
+                                    <span class="agreementText">沪-50ETF沽2月2700</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grayMargin"></div>
+                    <div class="monthBillItem lastMonthBillItem">
+                        <div class="allSeeHeader">
+                            <div class="allSeeTitle">资金情况</div>
+                        </div>
+                        <div class="allMoneyText">本期净入金(1月)</div>
+                        <div class="allMoneyNum yingcolor">
+                            <span class="moneyIcon">¥</span>
+                            <span class="realyNum">131.00</span>
+                        </div>
+                        <div class="twoColumn">
+                            <div class="oneOfColumn">
+                                <div class="agreementItem">
+                                    <div class="agreementDesc">入金金额</div>
+                                    <span class="agreementText">1,224,000.00</span>
+                                </div>
+                                <div class="agreementItem">
+                                    <div class="agreementDesc">入金笔数</div>
+                                    <span class="agreementText">10</span>
+                                </div>
+                                <div class="agreementItem">
+                                    <div class="agreementDesc">最大入金额</div>
+                                    <span class="agreementText">300.00</span>
+                                </div>
+                            </div>
+                            <div class="oneOfColumn">
+                                <div class="agreementItem">
+                                    <div class="agreementDesc">出金金额</div>
+                                    <span class="agreementText">1,224,000.00</span>
+                                </div>
+                                <div class="agreementItem">
+                                    <div class="agreementDesc">亏损额最大合约</div>
+                                    <span class="agreementText">5</span>
+                                </div>
+                                <div class="agreementItem">
+                                    <div class="agreementDesc">最大出金额</div>
+                                    <span class="agreementText">1000.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="moreProduct">
+                            <span>更多信息请至资金流水查询</span>
+                            <img src="img/grayArrow.png" alt="" />
+                        </div>
+                    </div>
+
+                    <van-popup 
+                        v-model="showStart" 
+                        position="bottom" 
+                        :overlay="true"
+                    >
+                        <van-datetime-picker 
+                            v-model="currentDate"
+                            type="year-month"
+                            title="选择年月"
+                            confirm-button-text="确定"
+                            :min-date="minDate"
+                            :max-date="maxDate"
+                            :formatter="formatter"
+                            @confirm='confirmPicker' 
+                            @cancel='cancelPicker' 
+                        />
+                    </van-popup>
+
+                    <div class="footerWrapper">
+                        <div class="instructions">数据仅供参考，实际收益以账户为准</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
